@@ -48,9 +48,14 @@ class App extends React.Component {
       const newMovieList = this.state.movies.filter(
         m => m.id !== movie.id
       )
-      this.setState({
+      //! If we dont have any state value, we can use that codes
+      // this.setState({
+      //   movies: newMovieList
+      // })
+      //! If we have state values, we can use that codes
+      this.setState(state => ({
         movies: newMovieList
-      })
+      }))
     }
 
     render() {
