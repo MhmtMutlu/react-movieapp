@@ -6,8 +6,8 @@ const MovieList = (props) => {
     return (
         <div className="row">
             {props.movies.map((movie) => (
-                <div className="col-lg-4">
-                    <div key={movie.id} className="card mb-4 shadow-lg border border-dark">
+                <div key={movie.id} className="col-lg-4">
+                    <div className="card mb-4 shadow-lg border border-dark">
                         <img src={movie.imageURL} className="card-img-top" alt="Sample Movie" />
                         <div className="card-body">
                             <h5 className="card-title">{movie.name}</h5>

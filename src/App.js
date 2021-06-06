@@ -41,7 +41,9 @@ class App extends React.Component {
               "overview": "When a mafia accountant is taken hostage on his beat, a police officer – wracked by guilt from a prior stint as a negotiator",
               "id": 5
             }
-          ]
+          ],
+
+        searchQuery: ""
     }
 
     deleteMovie = (movie) => {
@@ -58,16 +60,27 @@ class App extends React.Component {
       }))
     }
 
+    searchMovie = (e) => {
+      this.setState({searchQuery: e.target.value})
+    }
+
     render() {
+
+      let filteredMovies = this.state.movies.filter(
+        (movie) => {
+          return movie.name.toLowerCase().indexOf(this.state.searchQuery.toLowerCase()) !== -1
+        }
+      )
+
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
-                        <SearchBar />
+                        <SearchBar searchMovie={this.searchMovie} />
                     </div>
                 </div>
                 <MovieList
-                  movies={this.state.movies}
+                  movies={filteredMovies}
                   deleteMovie={this.deleteMovie}
                 />
             </div>
