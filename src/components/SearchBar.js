@@ -5,9 +5,18 @@ class SearhBar extends React.Component {
     render() {
         return (
             <form onSubmit={(e) => e.preventDefault()}>
-                <div className="form-row mb-5 mt-3">
-                    <div className="col-12">
+                <div className="row form-row mb-5 mt-3">
+                    <div className="col-lg-10">
                         <input onChange={this.props.searchMovie} type="search" className="form-control" placeholder="Search a movie..." />
+                    </div>
+                    <div className="col-lg-2">
+                        <button 
+                            type="button"
+                            className="btn btn-md btn-success"
+                            style={{ float: "right" }}
+                        >
+                            Add Movie
+                        </button>
                     </div>
                 </div>
             </form>
