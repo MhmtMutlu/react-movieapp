@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 class SearhBar extends React.Component {
 
@@ -10,13 +11,14 @@ class SearhBar extends React.Component {
                         <input onChange={this.props.searchMovie} type="search" className="form-control" placeholder="Search a movie..." />
                     </div>
                     <div className="col-lg-2">
-                        <button 
+                        <Link 
+                            to="/add"
                             type="button"
                             className="btn btn-md btn-success"
                             style={{ float: "right" }}
                         >
                             Add Movie
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </form>
