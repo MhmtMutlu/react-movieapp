@@ -2,6 +2,7 @@ import React from "react";
 import SearchBar from "./components/SearchBar";
 import MovieList from "./components/MovieList";
 import AddMovie from "./components/AddMovie";
+import EditMovie from "./components/EditMovie";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -44,12 +45,14 @@ class App extends React.Component {
 
   //! Delete func with axios
   deleteMovie = async (movie) => {
-    axios.delete(`http://localhost:3002/movies/${movie.id}`);
-    const newMovieList = this.state.movies.filter((m) => m.id !== movie.id);
-    this.setState((state) => ({
-      movies: newMovieList,
-    }));
-  };
+    axios.delete(`http://localhost:3002/movies/${movie.id}`)
+    const newMovieList = this.state.movies.filter(
+        m => m.id !== movie.id
+    );
+    this.setState(state => ({
+        movies: newMovieList
+    }))
+}
 
   //! Search movie 
   searchMovie = (e) => {
@@ -71,6 +74,8 @@ class App extends React.Component {
           .toLowerCase()
           .indexOf(this.state.searchQuery.toLowerCase()) !== -1
       );
+    }).sort((a, b) => {
+      return a.id < b.id ? 1 : a.id > b.id ? -1 : 0
     });
 
     return (
@@ -87,7 +92,7 @@ class App extends React.Component {
 
                   <MovieList
                     movies={filteredMovies}
-                    deleteMovieProp={this.deleteMovie}
+                    deleteMovie={this.deleteMovie}
                   />
                 </React.Fragment>
               )}
@@ -103,7 +108,9 @@ class App extends React.Component {
               )}
             ></Route>
 
-            
+            <Route path="/edit/:id" exact component={EditMovie}
+            ></Route>
+
           </Switch>
         </div>
       </Router>
