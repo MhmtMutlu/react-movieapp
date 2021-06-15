@@ -58,10 +58,17 @@
     },
     {
       "name": "The Hobbit: The Desolation of Smaug",
-      "rating": "8.3",
-      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xQYiXsheRCDBA39DOrmaw1aSpbk.jpg",
+      "rating": "8.4",
       "overview": "The Dwarves, Bilbo and Gandalf have successfully escaped the Misty Mountains, and Bilbo has gained the One Ring. They all continue their journey to get their gold back from the Dragon, Smaug.",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xQYiXsheRCDBA39DOrmaw1aSpbk.jpg",
       "id": 12
+    },
+    {
+      "name": "Mortal Kombat",
+      "rating": "7.5",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
+      "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe.",
+      "id": 13
     }
   ]
 }
